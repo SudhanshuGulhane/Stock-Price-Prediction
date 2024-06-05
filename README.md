@@ -5,18 +5,24 @@ data is not stationary. Additionally, there can be one test where we expect our 
 for the future work and make my model more robust.
 
 # The primary objective of this project
-To develop a model that can accurately predict the closing prices of stocks. The dataset comprises historical stock prices of multiple companies categorized into three volatility segments: low, stable, and high. The specific goals of this project are:
+To develop a LSTM model that can accurately predict the closing prices of stocks, and importantly to learn how they function. The dataset comprises historical stock prices of multiple companies categorized into three volatility segments: low, stable, and high. The specific goals of this project are:
 
 **Data Segmentation**: Segment the stock data into three categories based on volatility: low, stable, and high.
+
 **Feature Engineering**: Enhance the dataset with technical indicators such as Relative Strength Index (RSI) and Exponential Moving Averages (EMAs).
+
 **Model Training**: Train separate LSTM models for each volatility category to predict future stock prices.
+
 **Evaluation**: Evaluate the performance of the models using metrics like Mean Absolute Error (MAE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and Mean Absolute Percentage Error (MAPE).
+
 **Visualization**: Aggregate the results yearly and visualize the predictions against true values to interpret the model's performance.
 
 ### Data Preparation
 
 **Segmentation**: The stock data is divided into three categories based on annualized volatility. The volatility is calculated using the daily closing prices.
+
 **Feature Engineering**: Added technical indicators like RSI and EMAs to the dataset to provide additional features for the model.
+
 **Scaling**: The features are scaled using MinMaxScaler to normalize the input data.
 
 ### Model Architecture
@@ -31,9 +37,13 @@ Dropout: 0.5
 ### Training and Evaluation
 
 **Data Loaders**: Data is split into training and testing sets with an 80-20 split. DataLoader is used to handle batching.
+
 **Loss Function**: Mean Squared Error (MSE) is used as the loss function.
+
 **Optimizer**: AdamW optimizer with learning rate 0.001 and weight decay 1e-4.
+
 **Scheduler**: ReduceLROnPlateau scheduler to adjust the learning rate based on validation loss.
+
 **Early Stopping**: Implemented to stop training if the validation loss does not improve for a specified number of epochs.
 
 ### Implementation
@@ -43,9 +53,25 @@ Dropout: 0.5
 **Libraries**: The project leverages libraries like Pandas, NumPy, PyTorch, and Matplotlib for data handling, model training, and visualization.
 
 ### Most Interesting Results
-**Results Overview**
 
 The models for each volatility category (low, stable, high) were trained separately.
 Evaluation metrics were collected, and the predictions were visualized against true values.
 
-### Plots
+# Plots
+
+### High Volatile Stocks
+
+![Actuals and Predictions](https://github.com/SudhanshuGulhane/Stock-Price-Prediction/assets/50482460/99d206ad-aef8-4ce9-b505-9a497ed7129f)
+
+### Low Volatile Stocks
+
+![Actuals and Predictions](https://github.com/SudhanshuGulhane/Stock-Price-Prediction/assets/50482460/55e00516-e06a-42db-9658-ac6cd9c421d8)
+
+### Stable Volatile Stocks
+
+![Actuals and Predictions](https://github.com/SudhanshuGulhane/Stock-Price-Prediction/assets/50482460/39fb76c7-53e4-42d7-a471-f495103bd12d)
+
+### Complete Stocks Data
+
+![predictions and actuals](https://github.com/SudhanshuGulhane/Stock-Price-Prediction/assets/50482460/9f8951d6-a9ed-413c-b668-374b3c49f38a)
+
