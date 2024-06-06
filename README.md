@@ -4,6 +4,9 @@ Also, personally I feel that predicting the closing price of a stock isn't a goo
 data is not stationary. Additionally, there can be one test where we expect our model to predict the future stock price in a certain price range, for which we did not train our model. I plan to work on these 
 for the future work and make my model more robust.
 
+### Dataset
+https://www.kaggle.com/datasets/tanavbajaj/yahoo-finance-all-stocks-dataset-daily-update
+
 # The primary objective of this project
 To develop a LSTM model that can accurately predict the closing prices of stocks, and importantly to learn how they function. The dataset comprises historical stock prices of multiple companies categorized into three volatility segments: low, stable, and high. The specific goals of this project are:
 
